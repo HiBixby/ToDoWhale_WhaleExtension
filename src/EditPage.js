@@ -18,7 +18,9 @@ const EditPage = (props) => {
       </div>
       <div className="date">{moment(new Date()).format("YYYY.MM.DD")}</div>
       <div className="time-alarm">
-        <div className="time">{toDoInfo.time}</div>
+        <div className="time">
+          <input type="time" defaultValue={toDoInfo.time}></input>
+        </div>
         <i
           className={(isNotiOn ? "fa-solid" : "fa-regular") + " fa-bell"}
           onClick={() => setIsNotiOn(!isNotiOn)}
@@ -38,7 +40,7 @@ const EditPage = (props) => {
         <div className="link-text">Link</div>
         <div className="link-wrapper">
           <input
-            type="text"
+            type="url"
             defaultValue={toDoInfo.link}
             placeholder="ex) http://naver.com"
           />
