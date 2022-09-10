@@ -23,6 +23,8 @@ const MainPage = (props) => {
         formatShortWeekday={(locale, date) => moment(date).format("dd")}
         formatDay={(locale, date) => moment(date).format("D")}
         showNeighboringMonth={false}
+        prevLabel={<i className="fa-solid fa-chevron-left"></i>}
+        nextLabel={<i className="fa-solid fa-chevron-right"></i>}
         next2Label={null}
         prev2Label={null}
         onClickDay={(value, event) => setSelectedDay(value)}
@@ -38,11 +40,21 @@ const MainPage = (props) => {
       </div>
       <div className="todo-box">
         <div className="todo-list">
-          <ToDoList setSelectedToDo={props.setSelectedToDo} selectedDay={selectedDay} goEditPage={goEditPage}></ToDoList>
+          <ToDoList
+            setSelectedToDo={props.setSelectedToDo}
+            selectedDay={selectedDay}
+            goEditPage={goEditPage}
+          ></ToDoList>
         </div>
         <div className="text-center text-gray-600">
           {" "}
-          <i onClick={()=>{props.setMain(false);props.setEdit(true)}} class="fa-solid fa-circle-plus"></i>
+          <i
+            onClick={() => {
+              props.setMain(false);
+              props.setEdit(true);
+            }}
+            class="fa-solid fa-circle-plus"
+          ></i>
         </div>
       </div>
     </div>
