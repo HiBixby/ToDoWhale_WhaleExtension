@@ -8,7 +8,7 @@ import "./MainPage.css";
 const MainPage = (props) => {
   const [value, onChange] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
-  function goEditPage() {
+  function goEditPage(create=false) {
     props.setMain(false);
     props.setEdit(true);
   }
@@ -35,7 +35,7 @@ const MainPage = (props) => {
           </div>
         )}
       />
-      <div className="day-nth-task font-bold">
+      <div className="day-nth-task">
         {moment(selectedDay).format("D")}일 Task
       </div>
       <div className="todo-box">
@@ -49,7 +49,7 @@ const MainPage = (props) => {
         <div className="text-center text-gray-600">
           {" "}
           <i
-            onClick={goEditPage}
+            onClick={()=>goEditPage(true)}
             class="fa-solid fa-circle-plus"
           ></i>
         </div>
