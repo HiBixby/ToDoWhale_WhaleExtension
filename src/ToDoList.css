@@ -1,0 +1,17 @@
+.todolist-time{
+    font-size: 20pt;
+    font-weight: 600;
+}
+.todolist-content{
+    display: flex;
+    justify-content: space-between;
+}
+.todolist-content-text{
+    font-size: 16pt;
+    color: #707070;
+}
+.todolist-link{
+    font-size: 10pt;
+    font-weight:100;
+    color: #ADADAD;
+}

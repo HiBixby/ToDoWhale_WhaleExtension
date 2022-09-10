@@ -1,0 +1,28 @@
+.back{
+    font-size: 20px;
+    margin-bottom: 62px;
+}
+.time-alarm{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-alarm i{
+    font-size: 25px;
+}
+.date{
+    font-size: 10pt;
+    font-weight: 100px;
+}
+.time{
+    font-size: 28pt;
+    font-weight: 900;
+}
+.todo{
+    margin:54px 0px 24px 0px;
+}
+
+.todo input{
+    border-radius: 15px;
+}
