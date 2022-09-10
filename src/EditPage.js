@@ -28,7 +28,7 @@ const EditPage = (props) => {
         <div className="todo-title">To Do</div>
         <input
           type="text"
-          value={toDoInfo.content}
+          defaultValue={toDoInfo.content}
           placeholder="ex) 에스파 티켓팅 준비"
           className="bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none block w-full rounded-md sm:text-sm h-10"
         />
@@ -37,7 +37,7 @@ const EditPage = (props) => {
         <div className="link-text">Link</div>
         <input
           type="text"
-          value={toDoInfo.link}
+          defaultValue={toDoInfo.link}
           placeholder="ex) http://naver.com"
           className="bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none block w-full rounded-md sm:text-sm h-10"
         />
