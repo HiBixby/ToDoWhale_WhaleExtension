@@ -1,0 +1,17 @@
+.App{
+    height: 100vh;
+}
+.main-page {
+    height: 100%;
+    margin: 45px 20px 32px 20px;
+    text-align: left;
+}
+
+.day-nth-task {
+    margin-bottom: 20px;
+}
+
+
+.edit-page{
+    margin:54px 30px 54px 30px;
+}
