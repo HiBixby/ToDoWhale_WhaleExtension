@@ -10,7 +10,7 @@ const EditPage = (props) => {
   }
   let toDoInfo = props.selectedToDo;
 
-  const [isNotiOn, setIsNotiOn] = useState(true);
+  const [isNotiOn, setIsNotiOn] = useState(toDoInfo.noti);
   return (
     <div className="edit-page text-left">
       <div className="back" onClick={onExit}>
