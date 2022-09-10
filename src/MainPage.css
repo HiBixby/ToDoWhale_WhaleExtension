@@ -1,3 +1,8 @@
+.day-nth-task {
+    font-size: 20pt;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
 .todo-box {
     width: 100%;
@@ -6,7 +11,7 @@
     border: 1px black;
 }
 
-.todo-list{
+.todo-list {
     position: static;
-    padding:15px;
+    padding: 15px;
 }
