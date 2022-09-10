@@ -19,7 +19,7 @@
 }
 
 .time {
-    font-size: 28pt;
+    font-size: 18pt;
     font-weight: 800;
 }
 
@@ -37,12 +37,18 @@
 .todo-wrapper input {
     height: 100%;
     width: 100%;
+    padding:0px 10px;
     box-sizing: border-box;
+    border-radius: 15px;
     background-color: transparent;
-    margin: 0px 10px;
+    margin: 0px;
     overflow: hidden;
     font-size: 15pt;
 
+}
+
+.todo-wrapper input:focus{
+    outline: none;
 }
 
 .link-wrapper {
@@ -55,11 +61,17 @@
 .link-wrapper input {
     height: 100%;
     width: 100%;
+    border:0px;
     box-sizing: border-box;
     background-color: transparent;
     font-size: 15pt;
-    margin: 0px 10px 0px 10px;
+    padding: 0px 10px;
+    border-radius: 15px;
     color:white;
+}
+
+.link-wrapper input:focus{
+    outline:none;
 }
 
 .link-wrapper input::placeholder {
