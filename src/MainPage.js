@@ -49,10 +49,7 @@ const MainPage = (props) => {
         <div className="text-center text-gray-600">
           {" "}
           <i
-            onClick={() => {
-              props.setMain(false);
-              props.setEdit(true);
-            }}
+            onClick={goEditPage}
             class="fa-solid fa-circle-plus"
           ></i>
         </div>
