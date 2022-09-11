@@ -6,7 +6,7 @@ const EditPage = (props) => {
   function onExit() {
     props.setMain(true);
     props.setEdit(false);
-    console.log(toDo,link,time);
+    console.log(toDoInfo.id,toDo,link,time,isNotiOn);
     localStorage.setItem("test", "1");
   }
   let toDoInfo = props.selectedToDo;
