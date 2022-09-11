@@ -5,7 +5,7 @@ const ToDoList = (props) => {
   const todos = [
     {
       id: 1,
-      date: "10",
+      date: "11",
       time: "14:00",
       content:
         "아주아주아주아주아주매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우 긴 내용",
@@ -14,7 +14,7 @@ const ToDoList = (props) => {
     },
     {
       id: 2,
-      date: "10",
+      date: "11",
       time: "23:00",
       content: "내용2",
       link: "https://search.shopping.naver.com/book/catalog/33005838635?cat_id=50010881&frm=PBOKPRO&query=%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8&NaPm=ct%3Dl7vqq3xs%7Cci%3Df0bf3d0f13db5818474de3410294bdb3f4c913f1%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D113cde34ebdda1144796a6460a335e4b5f7eb701",
@@ -22,10 +22,10 @@ const ToDoList = (props) => {
     },
   ];
   return (
-    <div>
-      {todos.map((todo) => (
-        <div>
-          {todo.date === moment(props.selectedDay).format("DD") ? (
+    <>
+      {todos.map((todo) =>
+        todo.date === moment(props.selectedDay).format("DD") ? (
+          <div>
             <div>
               <div className="todolist-time">{todo.time}</div>
               <div className="todolist-content">
@@ -46,14 +46,20 @@ const ToDoList = (props) => {
                 </div>
               </div>
               <div className="todolist-link">
-                {todo.link ? <a href={todo.link} target="_blank">{todo.link}</a> : "No Link"}
+                {todo.link ? (
+                  <a href={todo.link} target="_blank">
+                    {todo.link}
+                  </a>
+                ) : (
+                  "No Link"
+                )}
               </div>
               <hr />
             </div>
-          ) : null}
-        </div>
-      ))}
-    </div>
+          </div>
+        ) : null
+      )}
+    </>
   );
 };
 export default ToDoList;
