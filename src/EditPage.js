@@ -6,9 +6,13 @@ const EditPage = (props) => {
   function onExit() {
     props.setMain(true);
     props.setEdit(false);
+    console.log(toDo,link,time);
     localStorage.setItem("test", "1");
   }
   let toDoInfo = props.selectedToDo;
+  const [toDo, setToDo] = useState(toDoInfo.content);
+  const [link, setLink] = useState(toDoInfo.link);
+  const [time, setTime] = useState(toDoInfo.time);
 
   const [isNotiOn, setIsNotiOn] = useState(toDoInfo.noti);
   return (
@@ -19,7 +23,11 @@ const EditPage = (props) => {
       <div className="date">{moment(new Date()).format("YYYY.MM.DD")}</div>
       <div className="time-alarm">
         <div className="time">
-          <input type="time" defaultValue={toDoInfo.time}></input>
+          <input
+            type="time"
+            defaultValue={toDoInfo.time}
+            onChange={(event) => setTime(event.target.value)}
+          ></input>
         </div>
         <i
           className={(isNotiOn ? "fa-solid" : "fa-regular") + " fa-bell"}
@@ -33,6 +41,7 @@ const EditPage = (props) => {
             type="text"
             defaultValue={toDoInfo.content}
             placeholder="ex) 에스파 티켓팅 준비"
+            onChange={(event) => setToDo(event.target.value)}
           />
         </div>
       </div>
@@ -43,6 +52,7 @@ const EditPage = (props) => {
             type="url"
             defaultValue={toDoInfo.link}
             placeholder="ex) http://naver.com"
+            onChange={(event) => setLink(event.target.value)}
           />
         </div>
       </div>
