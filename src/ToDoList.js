@@ -25,37 +25,36 @@ const ToDoList = (props) => {
     <>
       {todos.map((todo) =>
         todo.date === moment(props.selectedDay).format("DD") ? (
-          <div>
-            <div>
-              <div className="todolist-time">{todo.time}</div>
-              <div className="todolist-content">
-                <div className="todolist-content-text">{todo.content}</div>
-                <div className="todolist-icons">
-                  <i
-                    onClick={() => {
-                      props.setSelectedToDo(todo);
-                      props.goEditPage();
-                    }}
-                    className="fa-solid fa-pen-to-square mx-3"
-                  ></i>
-                  <i
-                    className={
-                      (todo.noti ? "fa-solid" : "fa-regular") + " fa-bell"
-                    }
-                  ></i>
-                </div>
+          <div key={todo.id}>
+            <div className="todolist-time">{todo.time}</div>
+            <div className="todolist-content">
+              <div className="todolist-content-text">{todo.content}</div>
+              <div className="todolist-icons">
+                <i
+                  onClick={() => {
+                    props.setSelectedToDo(todo);
+                    props.goEditPage();
+                  }}
+                  className="fa-solid fa-pen-to-square mx-3"
+                ></i>
+                <i
+                  className={
+                    (todo.noti ? "fa-solid" : "fa-regular") + " fa-bell"
+                  }
+                ></i>
               </div>
-              <div className="todolist-link">
-                {todo.link ? (
-                  <a href={todo.link} target="_blank">
-                    {todo.link}
-                  </a>
-                ) : (
-                  "No Link"
-                )}
-              </div>
-              <hr />
             </div>
+            <div className="todolist-link">
+              {todo.link ? (
+                <a href={todo.link} target="_blank">
+                  {todo.link}
+                </a>
+              ) : (
+                "No Link"
+              )}
+            </div>
+            <hr />
+            <br />
           </div>
         ) : null
       )}
