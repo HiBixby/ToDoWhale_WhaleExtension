@@ -46,8 +46,7 @@ const MainPage = (props) => {
             goEditPage={goEditPage}
           ></ToDoList>
         </div>
-        <div className="text-center text-gray-600">
-          {" "}
+        <div className="btn-add-todo">
           <i
             onClick={()=>goEditPage(true)}
             class="fa-solid fa-circle-plus"
