@@ -1,3 +1,5 @@
+/*global whale*/
+/*global chrome*/
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "./Calendar.css";
@@ -19,6 +21,16 @@ const MainPage = (props) => {
   function goEditPage(create = false) {
     props.setMain(false);
     props.setEdit(true);
+  }
+
+  function testnoti() {
+    chrome.notifications.create(null, {
+      type: "basic",
+      iconUrl: "logo192.png",
+      title: "웨,일해",
+      message: "notification message",
+      priority: 2,
+    });
   }
   return (
     <div className="main-page">
@@ -52,6 +64,8 @@ const MainPage = (props) => {
             setSelectedToDo={props.setSelectedToDo}
             selectedDay={selectedDay}
             goEditPage={goEditPage}
+            todos={props.todos}
+            setTodos={props.setTodos}
           ></ToDoList>
         </div>
         <div className="btn-add-todo">
@@ -59,6 +73,7 @@ const MainPage = (props) => {
             onClick={() => {
               props.setSelectedToDo(defaultToDo);
               goEditPage(true);
+              testnoti();
             }}
             class="fa-solid fa-circle-plus"
           ></i>
