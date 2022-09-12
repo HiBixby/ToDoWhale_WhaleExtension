@@ -2,16 +2,24 @@ import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Calendar from "react-calendar";
-import "./Calendar.css";
 import moment from "moment";
 import "./style.css";
-import MainPage from "./MainPage";
-import EditPage from "./EditPage";
+import MainPage from "./components/MainPage";
+import EditPage from "./components/EditPage";
 
 function App() {
-  const [isMainPage,setIsMainPage] = useState(true)
-  const [isEditPage,setEditPage]=useState(false)
-  const [selectedToDo,setSelectedToDo]=useState(null)
+  const [isMainPage,setIsMainPage] = useState(true);
+  const [isEditPage,setEditPage]=useState(false);
+  const defaultToDo = [
+    {
+      id: 10,
+      date: "12",
+      time: null,
+      content: null,
+      link: null,
+      noti: true,
+    }]
+  const [selectedToDo,setSelectedToDo]=useState(defaultToDo);
   return (
     <div className="App antialiased">
       {isMainPage? <MainPage setMain={setIsMainPage} setEdit={setEditPage} setSelectedToDo={setSelectedToDo}/>:null}
