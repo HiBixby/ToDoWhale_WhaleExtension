@@ -9,12 +9,17 @@ const EditPage = (props) => {
   function onExit() {
     props.setMain(true);
     props.setEdit(false);
+    const todos = [...props.todos];
+    console.log(typeof(index));
+    todos[index]={id:id,date:date,time:time,content:toDo,link:link,noti:isNotiOn};
+    props.setTodos(todos);
     console.log(toDoInfo.id, date, toDo, link, time, isNotiOn);
     // chrome.storage.local.set({ key: storage }, function () {
     //   console.log("Value is set to " + storage);
     // });
   }
   let toDoInfo = props.selectedToDo;
+  const index = props.todoIndex;
   const [id, setId] = useState(toDoInfo.id);
   const [date, setDate] = useState(toDoInfo.date);
   const [toDo, setToDo] = useState(toDoInfo.content);

@@ -66,12 +66,15 @@ const MainPage = (props) => {
             goEditPage={goEditPage}
             todos={props.todos}
             setTodos={props.setTodos}
+            setTodoIndex={props.setTodoIndex}
           ></ToDoList>
         </div>
         <div className="btn-add-todo">
           <i
             onClick={() => {
               props.setSelectedToDo(defaultToDo);
+              props.setTodoIndex(props.todos.length);
+              console.log(props.todos.length);
               goEditPage(true);
               testnoti();
             }}
