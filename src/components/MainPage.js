@@ -8,7 +8,15 @@ import "./MainPage.css";
 const MainPage = (props) => {
   const [value, onChange] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
-  function goEditPage(create=false) {
+  const defaultToDo = {
+    id: 10,
+    date: selectedDay,
+    time: null,
+    content: null,
+    link: null,
+    noti: true,
+  };
+  function goEditPage(create = false) {
     props.setMain(false);
     props.setEdit(true);
   }
@@ -48,7 +56,10 @@ const MainPage = (props) => {
         </div>
         <div className="btn-add-todo">
           <i
-            onClick={()=>goEditPage(true)}
+            onClick={() => {
+              props.setSelectedToDo(defaultToDo);
+              goEditPage(true);
+            }}
             class="fa-solid fa-circle-plus"
           ></i>
         </div>
