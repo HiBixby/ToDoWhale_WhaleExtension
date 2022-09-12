@@ -77,3 +77,13 @@
 .link-wrapper input::placeholder {
     color: white;
 }
+
+.btn-delete{
+    height:51px;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 15pt;
+    margin-top:400px;
+    color:white;
+    background-color: #707070;
+}

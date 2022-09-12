@@ -23,7 +23,7 @@ const ToDoList = (props) => {
           isSameDate(todo.date, props.selectedDay) ? (
             <div key={index}>
               <div className="todolist-time">
-                {todo.time == null ? "--:--" : todo.time}
+                {todo.time == 0 ? "--:--" : todo.time}
               </div>
               <div className="todolist-content">
                 <div className="todolist-content-text">{todo.content}</div>

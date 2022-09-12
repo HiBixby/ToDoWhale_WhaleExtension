@@ -6,17 +6,36 @@ import moment from "moment";
 import "./EditPage.css";
 
 const EditPage = (props) => {
-  function onExit() {
+  function goMain() {
     props.setMain(true);
     props.setEdit(false);
+  }
+  function onExit() {
+    goMain();
     const todos = [...props.todos];
-    console.log(typeof(index));
-    todos[index]={id:id,date:date,time:time,content:toDo,link:link,noti:isNotiOn};
+    console.log(typeof index);
+    let timeNotNull = time;
+    if (timeNotNull == null) {
+      timeNotNull = 0;
+    }
+    todos[index] = {
+      id: id,
+      date: date,
+      time: timeNotNull,
+      content: toDo,
+      link: link,
+      noti: isNotiOn,
+    };
     props.setTodos(todos);
     console.log(toDoInfo.id, date, toDo, link, time, isNotiOn);
     // chrome.storage.local.set({ key: storage }, function () {
     //   console.log("Value is set to " + storage);
     // });
+  }
+  function deleteTodo(id) {
+    props.setTodos(props.todos.filter((todo) => todo.id !== props.selectedToDo.id));
+    console.log('지워진다',id)
+    console.log(props.todos);
   }
   let toDoInfo = props.selectedToDo;
   const index = props.todoIndex;
@@ -25,26 +44,6 @@ const EditPage = (props) => {
   const [toDo, setToDo] = useState(toDoInfo.content);
   const [link, setLink] = useState(toDoInfo.link);
   const [time, setTime] = useState(toDoInfo.time);
-
-  const storage = [
-    {
-      id: 1,
-      date: new Date(),
-      time: "14:00",
-      content:
-        "아주아주아주아주아주매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우 긴 내용",
-      link: null,
-      noti: true,
-    },
-    {
-      id: 2,
-      date: new Date(),
-      time: "23:00",
-      content: "내용2",
-      link: "https://search.shopping.naver.com/book/catalog/33005838635?cat_id=50010881&frm=PBOKPRO&query=%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8&NaPm=ct%3Dl7vqq3xs%7Cci%3Df0bf3d0f13db5818474de3410294bdb3f4c913f1%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D113cde34ebdda1144796a6460a335e4b5f7eb701",
-      noti: false,
-    },
-  ];
 
   const [isNotiOn, setIsNotiOn] = useState(toDoInfo.noti);
   return (
@@ -88,6 +87,16 @@ const EditPage = (props) => {
           />
         </div>
       </div>
+      <button
+        className="btn-delete"
+        onClick={() => {
+          deleteTodo({ id });
+          goMain();
+        }}
+      >
+        <i class="fa-solid fa-trash-can"></i> 임시로 만든 삭제 버튼
+      </button>
+      <p className="text-center">계획을 세웠으면 지켜야죠</p>
     </div>
   );
 };
