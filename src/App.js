@@ -10,16 +10,7 @@ import EditPage from "./components/EditPage";
 function App() {
   const [isMainPage,setIsMainPage] = useState(true);
   const [isEditPage,setEditPage]=useState(false);
-  const defaultToDo = [
-    {
-      id: 10,
-      date: "12",
-      time: null,
-      content: null,
-      link: null,
-      noti: true,
-    }]
-  const [selectedToDo,setSelectedToDo]=useState(defaultToDo);
+  const [selectedToDo,setSelectedToDo]=useState();
   return (
     <div className="App antialiased">
       {isMainPage? <MainPage setMain={setIsMainPage} setEdit={setEditPage} setSelectedToDo={setSelectedToDo}/>:null}
