@@ -6,19 +6,19 @@
   "sidebar_action": {
     "default_page": "index.html",
     "default_icon": {
-      "16": "logo192.png",
-      "32": "logo192.png",
-      "48": "logo192.png",
-      "128": "logo192.png"
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
     },
     "default_title":"웨,일해",
     "use_navigation_bar": false
   },
   "icons": {
-    "16": "logo192.png",
-    "32": "logo192.png",
-    "48": "logo192.png",
-    "128": "logo192.png"
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   },
   "permissions":[
     "storage",
