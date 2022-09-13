@@ -1,4 +1,6 @@
-import { useState } from "react";
+/*global chrome */
+/*global local*/
+import { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Calendar from "react-calendar";
@@ -13,6 +15,11 @@ function App() {
   const [isEditPage, setEditPage] = useState(false);
   const [selectedToDo, setSelectedToDo] = useState();
   const [todos, setTodos] = useState([]);
+  // useEffect(() => {
+  //   chrome.storage.local.get(["todos"], function (result) {
+  //     console.log("Value currently is " + result.id);
+  //   });
+  // });
   return (
     <div className="App antialiased">
       {isMainPage ? (
