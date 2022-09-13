@@ -35,9 +35,9 @@ const MainPage = (props) => {
   function testnoti() {
     chrome.notifications.create(null, {
       type: "basic",
-      iconUrl: "logo192.png",
-      title: "웨,일해",
-      message: "notification message",
+      iconUrl: "1111.svg",
+      title: "웨,일해?",
+      message: "시간이 다 되었어요!",
       priority: 2,
     });
   }
