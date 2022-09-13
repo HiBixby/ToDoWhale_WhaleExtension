@@ -8,6 +8,7 @@ import MainPage from "./components/MainPage";
 import EditPage from "./components/EditPage";
 
 function App() {
+  const [todoIndex, setTodoIndex] = useState();
   const [isMainPage, setIsMainPage] = useState(true);
   const [isEditPage, setEditPage] = useState(false);
   const [selectedToDo, setSelectedToDo] = useState();
@@ -39,6 +40,8 @@ function App() {
           setSelectedToDo={setSelectedToDo}
           todos={todos}
           setTodos={setTodos}
+          todoIndex={todoIndex}
+          setTodoIndex={setTodoIndex}
         />
       ) : null}
       {isEditPage ? (
@@ -48,6 +51,8 @@ function App() {
           selectedToDo={selectedToDo}
           todos={todos}
           setTodos={setTodos}
+          todoIndex={todoIndex}
+          setTodoIndex={setTodoIndex}
         />
       ) : null}
     </div>

@@ -10,8 +10,17 @@ import "./MainPage.css";
 const MainPage = (props) => {
   const [value, onChange] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
+  function createNewId(){
+    console.log(props.todos);
+    if (props.todos.length===0){
+      return 0
+    }
+    else{
+      return props.todos[props.todos.length-1].id+1
+    }
+  }
   const defaultToDo = {
-    id: 10,
+    id: createNewId(),
     date: selectedDay,
     time: null,
     content: null,
@@ -66,12 +75,15 @@ const MainPage = (props) => {
             goEditPage={goEditPage}
             todos={props.todos}
             setTodos={props.setTodos}
+            setTodoIndex={props.setTodoIndex}
           ></ToDoList>
         </div>
         <div className="btn-add-todo">
           <i
             onClick={() => {
               props.setSelectedToDo(defaultToDo);
+              props.setTodoIndex(props.todos.length);
+              console.log(props.todos.length);
               goEditPage(true);
               testnoti();
             }}
