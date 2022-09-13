@@ -9,16 +9,19 @@ const ToDoList = (props) => {
       date1.getDate() === date2.getDate()
     );
   };
-  function editNoti(index){
+  function editNoti(index) {
     const tmp = [...todos];
-    tmp[index].noti=!tmp[index].noti;
+    tmp[index].noti = !tmp[index].noti;
     props.setTodos(tmp);
   }
   const todos = props.todos;
   return (
     <>
       {todos
-        .sort((a, b) => (a===null)-(b===null) || (''+a.time).localeCompare(b.time))
+        .sort(
+          (a, b) =>
+            (a === null) - (b === null) || ("" + a.time).localeCompare(b.time)
+        )
         .map((todo, index) =>
           isSameDate(todo.date, props.selectedDay) ? (
             <div key={index}>
@@ -38,7 +41,9 @@ const ToDoList = (props) => {
                     className="fa-solid fa-pen-to-square mx-3"
                   ></i>
                   <i
-                    onClick={()=>{editNoti(index)}}
+                    onClick={() => {
+                      editNoti(index);
+                    }}
                     className={
                       (todo.noti ? "fa-solid" : "fa-regular") + " fa-bell"
                     }
