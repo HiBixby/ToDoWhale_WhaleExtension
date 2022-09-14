@@ -10,8 +10,15 @@ const EditPage = (props) => {
     props.setMain(true);
     props.setEdit(false);
   }
+  function createAlarm() {
+    chrome.alarms.create(id.toString(), {
+      delayInMinutes: 0.1,
+    });
+    console.log("alarm created",typeof(id.toString()));
+  }
   function onExit() {
     goMain();
+    createAlarm();
     const todos = [...props.todos];
     console.log(typeof index);
     let timeNotNull = time;
@@ -25,10 +32,10 @@ const EditPage = (props) => {
       content: toDo,
       link: link,
       noti: isNotiOn,
-      finished:finished,
+      finished: finished,
     };
     props.setTodos(todos);
-    console.log(toDoInfo.id, date, toDo, link, time, isNotiOn);
+    console.log(typeof(id),toDoInfo.id, date, toDo, link, time, isNotiOn);
   }
 
   function deleteTodo(id) {
