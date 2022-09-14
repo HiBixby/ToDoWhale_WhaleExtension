@@ -28,17 +28,14 @@ const EditPage = (props) => {
     };
     props.setTodos(todos);
     console.log(toDoInfo.id, date, toDo, link, time, isNotiOn);
-    chrome.storage.local.set({ todos: props.todos }, function () {
-      console.log("Value is set to " + props.todos);
-    });
-    // chrome.storage.local.set({ key: storage }, function () {
-    //   console.log("Value is set to " + storage);
-    // });
+    localStorage.setItem("todos", JSON.stringify(props.todos));
+    console.log(localStorage.getItem("todos"));
   }
   function deleteTodo(id) {
     props.setTodos(
       props.todos.filter((todo) => todo.id !== props.selectedToDo.id)
     );
+    localStorage.setItem("todos", props.todos);
     console.log("지워진다", id);
     console.log(props.todos);
   }

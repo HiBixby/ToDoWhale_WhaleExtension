@@ -15,11 +15,10 @@ function App() {
   const [isEditPage, setEditPage] = useState(false);
   const [selectedToDo, setSelectedToDo] = useState();
   const [todos, setTodos] = useState([]);
-  // useEffect(() => {
-  //   chrome.storage.local.get(["todos"], function (result) {
-  //     console.log("Value currently is " + result.id);
-  //   });
-  // });
+  useEffect(() => {
+    let storedTodos = JSON.parse(localStorage.getItem("todos"));
+    setTodos(storedTodos);
+  }, []);
   return (
     <div className="App antialiased">
       {isMainPage ? (
