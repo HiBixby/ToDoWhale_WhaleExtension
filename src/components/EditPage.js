@@ -25,11 +25,11 @@ const EditPage = (props) => {
       content: toDo,
       link: link,
       noti: isNotiOn,
+      finished:finished,
     };
     props.setTodos(todos);
     console.log(toDoInfo.id, date, toDo, link, time, isNotiOn);
   }
-
 
   function deleteTodo(id) {
     props.setTodos(
@@ -46,6 +46,7 @@ const EditPage = (props) => {
   const [toDo, setToDo] = useState(toDoInfo.content);
   const [link, setLink] = useState(toDoInfo.link);
   const [time, setTime] = useState(toDoInfo.time);
+  const [finished, setFinished] = useState(toDoInfo.finished);
 
   const [isNotiOn, setIsNotiOn] = useState(toDoInfo.noti);
   return (
@@ -68,12 +69,12 @@ const EditPage = (props) => {
         ></i>
       </div>
       <div className="todo">
-        <div className="todo-title">To Do</div>
+        <div className="todo-title">To do</div>
         <div className="todo-wrapper">
           <input
             type="text"
             defaultValue={toDoInfo.content}
-            placeholder="ex) 에스파 티켓팅 준비"
+            placeholder="일정을 입력해주세요"
             onChange={(event) => setToDo(event.target.value)}
           />
         </div>
@@ -84,7 +85,7 @@ const EditPage = (props) => {
           <input
             type="url"
             defaultValue={toDoInfo.link}
-            placeholder="ex) http://naver.com"
+            placeholder="URL을 입력해주세요"
             onChange={(event) => setLink(event.target.value)}
           />
         </div>

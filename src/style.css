@@ -1,6 +1,7 @@
-.App{
+.App {
     height: 100vh;
 }
+
 .main-page {
     height: 100%;
     padding: 45px 20px 32px 20px;
@@ -12,6 +13,7 @@
 
 
 
-.edit-page{
-    margin:54px 30px 54px 30px;
+.edit-page {
+    margin: 54px 30px 54px 30px;
+    color:var(--whale-green-0);
 }

@@ -3,6 +3,10 @@
     margin-bottom: 62px;
 }
 
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}
+
 .time-alarm {
     display: flex;
     justify-content: space-between;
@@ -27,19 +31,29 @@
     margin: 54px 0px 24px 0px;
 }
 
+.todo-title {
+    font-weight: 600;
+}
+
+.link-text {
+    font-weight: 600;
+}
+
 .todo-wrapper {
     height: 51px;
     width: 100%;
     border-radius: 15px;
-    border: solid 1px #70707070;
+    border: solid 1px var(--whale-green-1);
+    background-color: var(--whale-green-3);
 }
 
 .todo-wrapper input {
     height: 100%;
     width: 100%;
-    padding:0px 10px;
+    padding: 0px 10px;
     box-sizing: border-box;
     border-radius: 15px;
+    font-weight: 700;
     background-color: transparent;
     margin: 0px;
     overflow: hidden;
@@ -47,7 +61,7 @@
 
 }
 
-.todo-wrapper input:focus{
+.todo-wrapper input:focus {
     outline: none;
 }
 
@@ -55,35 +69,36 @@
     height: 51px;
     width: 100%;
     border-radius: 15px;
-    background-color: #70707070;
+    border: solid 1px var(--whale-green-1);
+    background-color: var(--whale-green-3);
 }
 
 .link-wrapper input {
     height: 100%;
     width: 100%;
-    border:0px;
+    border: 0px;
     box-sizing: border-box;
     background-color: transparent;
     font-size: 15pt;
     padding: 0px 10px;
     border-radius: 15px;
-    color:white;
+    color: var(--whale-green-0);
 }
 
-.link-wrapper input:focus{
-    outline:none;
+.link-wrapper input:focus {
+    outline: none;
 }
 
 .link-wrapper input::placeholder {
-    color: white;
+    color: #9e9e9e;
 }
 
-.btn-delete{
-    height:51px;
+.btn-delete {
+    height: 51px;
     width: 100%;
     border-radius: 15px;
     font-size: 15pt;
-    margin-top:400px;
-    color:white;
-    background-color: #707070;
+    margin-top: 400px;
+    color: white;
+    background-color: var(--whale-green-0);
 }

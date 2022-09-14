@@ -28,6 +28,7 @@ const ToDoList = (props) => {
           isSameDate(todo.date, props.selectedDay) ? (
             <div key={index}>
               <div className="todolist-time">
+                <input type="checkbox"></input>
                 {todo.time == 0 ? "NONE" : todo.time}
               </div>
               <div className="todolist-content">
