@@ -8,6 +8,13 @@
   display: none;
 } */
 
+:root{
+  --whale-green-0:#01af94;
+  --whale-green-1:#34e8cd;
+  --whale-green-2:#AAFAEE;
+  --whale-green-3:#DEFFFA;
+  --whale-green-4:#F9FFFF;
+}
 html {
   margin: 0;
   padding: 0;

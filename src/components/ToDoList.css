@@ -1,13 +1,16 @@
-.todolist-time{
+.todolist-time {
     font-size: 16pt;
     font-weight: 600;
+    color: var(--whale-green-0);
 }
-.todolist-content{
+
+.todolist-content {
     display: flex;
     white-space: nowrap;
     justify-content: space-between;
 }
-.todolist-content-text{
+
+.todolist-content-text {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -15,12 +18,17 @@
     font-size: 16pt;
     color: #707070;
 }
-.todolist-link{
+
+.todolist-icons {
+    color: var(--whale-green-0);
+}
+
+.todolist-link {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width:75%;
+    width: 75%;
     font-size: 10pt;
-    font-weight:100;
+    font-weight: 100;
     color: #ADADAD;
 }
