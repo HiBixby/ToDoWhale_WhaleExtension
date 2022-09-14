@@ -11,10 +11,28 @@ const EditPage = (props) => {
     props.setEdit(false);
   }
   function createAlarm() {
-    chrome.alarms.create(id.toString(), {
-      delayInMinutes: 0.1,
-    });
-    console.log("alarm created",typeof(id.toString()));
+    let dateTypeDate = new Date(date);
+    let dt =
+      dateTypeDate.getFullYear() +
+      "-" +
+      (dateTypeDate.getMonth() + 1) +
+      "-" +
+      dateTypeDate.getDate();
+    let dateAndTime = new Date(dt + " " + time);
+    if (time != null && dateAndTime > Date.now()) {
+      chrome.alarms.create(id.toString(), {
+        when: dateAndTime.getTime(),
+      });
+      console.log(
+        "alarm created",
+        typeof id.toString(),
+        date,
+        dateAndTime,
+        dateAndTime.getTime()
+      );
+    } else {
+      console.log("시간이 정해지지 않아서 알람을 생성하지 않음");
+    }
   }
   function onExit() {
     goMain();
@@ -35,7 +53,7 @@ const EditPage = (props) => {
       finished: finished,
     };
     props.setTodos(todos);
-    console.log(typeof(id),toDoInfo.id, date, toDo, link, time, isNotiOn);
+    console.log(typeof id, toDoInfo.id, date, toDo, link, time, isNotiOn);
   }
 
   function deleteTodo(id) {
@@ -43,6 +61,9 @@ const EditPage = (props) => {
       props.todos.filter((todo) => todo.id !== props.selectedToDo.id)
     );
     localStorage.setItem("todos", JSON.stringify(props.todos));
+    chrome.alarms.clear(props.selectedToDo.id.toString(), (wasCleared) => {
+      console.log("wasCleared:", wasCleared);
+    });
     console.log("지워진다", id);
     console.log(props.todos);
   }

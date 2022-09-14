@@ -10,13 +10,12 @@ import "./MainPage.css";
 const MainPage = (props) => {
   const [value, onChange] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
-  function createNewId(){
+  function createNewId() {
     console.log(props.todos);
-    if (props.todos.length===0){
-      return 0
-    }
-    else{
-      return props.todos[props.todos.length-1].id+1
+    if (props.todos.length === 0) {
+      return 0;
+    } else {
+      return props.todos[props.todos.length - 1].id + 1;
     }
   }
   const defaultToDo = {
@@ -32,15 +31,6 @@ const MainPage = (props) => {
     props.setEdit(true);
   }
 
-  function testnoti() {
-    chrome.notifications.create(null, {
-      type: "basic",
-      iconUrl: "1111.svg",
-      title: "웨,일해?",
-      message: "시간이 다 되었어요!",
-      priority: 2,
-    });
-  }
   return (
     <div className="main-page">
       <Calendar
@@ -85,7 +75,6 @@ const MainPage = (props) => {
               props.setTodoIndex(props.todos.length);
               console.log(props.todos.length);
               goEditPage(true);
-              testnoti();
             }}
             class="fa-solid fa-circle-plus"
           ></i>
