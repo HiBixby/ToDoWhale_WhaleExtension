@@ -17,8 +17,19 @@ function App() {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
     let storedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (storedTodos == null) {
+      storedTodos = [];
+    }
     setTodos(storedTodos);
   }, []);
+
+  useEffect(() => {
+    if (todos.length!=0) {
+      console.log("저장한 todos:", todos);
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, [todos]);
+
   return (
     <div className="App antialiased">
       {isMainPage ? (

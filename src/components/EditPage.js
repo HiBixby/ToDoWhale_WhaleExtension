@@ -1,7 +1,7 @@
 /*global whale*/
 /*global chrome*/
 /*global local*/
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "./EditPage.css";
 
@@ -28,14 +28,14 @@ const EditPage = (props) => {
     };
     props.setTodos(todos);
     console.log(toDoInfo.id, date, toDo, link, time, isNotiOn);
-    localStorage.setItem("todos", JSON.stringify(props.todos));
-    console.log(localStorage.getItem("todos"));
   }
+
+
   function deleteTodo(id) {
     props.setTodos(
       props.todos.filter((todo) => todo.id !== props.selectedToDo.id)
     );
-    localStorage.setItem("todos", props.todos);
+    localStorage.setItem("todos", JSON.stringify(props.todos));
     console.log("지워진다", id);
     console.log(props.todos);
   }
