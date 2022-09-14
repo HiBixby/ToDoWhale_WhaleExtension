@@ -97,9 +97,9 @@ const EditPage = (props) => {
           goMain();
         }}
       >
-        <i class="fa-solid fa-trash-can"></i> 임시로 만든 삭제 버튼
+        <i class="fa-solid fa-trash-can"></i> 삭제
       </button>
-      <p className="text-center">계획을 세웠으면 지켜야죠</p>
+      {/* <p className="text-center">계획을 세웠으면 지켜야죠</p> */}
     </div>
   );
 };
