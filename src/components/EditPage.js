@@ -19,7 +19,7 @@ const EditPage = (props) => {
       "-" +
       dateTypeDate.getDate();
     let dateAndTime = new Date(dt + " " + time);
-    if (time != null && dateAndTime > Date.now()) {
+    if (time != null && dateAndTime > Date.now() && isNotiOn) {
       chrome.alarms.create(id.toString(), {
         when: dateAndTime.getTime(),
       });
@@ -31,7 +31,7 @@ const EditPage = (props) => {
         dateAndTime.getTime()
       );
     } else {
-      console.log("시간이 정해지지 않아서 알람을 생성하지 않음");
+      console.log("알람을 생성하지 않음");
     }
   }
   function onExit() {
